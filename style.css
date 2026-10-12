@@ -1474,3 +1474,70 @@ input:checked + .slider:before {
     margin-top: 20px;
   }
 }
+
+/* ===== Responsive fixes (tablet and phone) ===== */
+@media (max-width: 1100px) {
+  .feature-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 16px;
+  }
+  #row2 { flex-direction: column-reverse; }
+  #row1-square, #row2-square, #row1-rectangle, #row2-rectangle {
+    margin-left: 0;
+    margin-top: 0;
+    width: 100%;
+    max-width: 720px;
+  }
+  .feature-grid:first-of-type { margin-top: 40px; }
+  #row1-square, #row2-square { height: 360px; }
+  .logo-container { padding: 25px 20px; }
+}
+
+@media (max-width: 768px) {
+  html, body { overflow-x: hidden; }
+
+  .section-heading { font-size: 26px; padding: 0 16px; }
+  .section-heading br, .client-feature-description br,
+  .client-feature-text br, .pricing-feature-description br,
+  .subheading-primary br { display: none; }
+
+  .feature-content { font-size: 16px; }
+  #row1-square-content, #row2-square-content,
+  #row1-rectangle-content, #row2-rectangle-content {
+    left: 20px;
+    right: 20px;
+  }
+
+  .feature-summary-container { width: auto; margin: 60px 16px 0; padding: 24px; }
+  .feature-summary-title { font-size: 2.4em; margin-left: 0; }
+  .feature-summary-content { grid-template-columns: 1fr; margin-left: 0; gap: 24px; }
+
+  .client-feature-title, .pricing-feature-title { font-size: 40px; margin-top: 60px; }
+  .client-feature-description { font-size: 1.1em; margin-top: 0; padding: 0 16px; }
+
+  .pricing-container-set { flex-direction: column; align-items: center; padding: 0 16px; }
+  .pricing-container { width: 100%; max-width: 360px; height: auto; padding-bottom: 20px; }
+
+  .signup-title { font-size: 2.2em; padding: 0 16px; }
+
+  .logo-container { padding: 20px 10px; }
+  .footer { padding: 32px 16px; }
+}
+
+/* Keep the dashboard previews inside their cards */
+.feature-item-container { overflow: hidden; }
+.feature-image, .client-feature-photo { max-width: 100%; height: auto; }
+
+@media (max-width: 768px) {
+  .pricing-feature-description { font-size: 1.1em; margin-top: 0; padding: 0 16px; }
+  .purple-circle { max-width: 100%; }
+}
+
+/* Stop the section titles from overlapping the text under them */
+.client-feature-description, .pricing-feature-description { margin-top: 12px; }
+.client-feature-title, .pricing-feature-title { margin-bottom: 0; }
+
+.pricing-content { padding: 24px; box-sizing: border-box; width: 100%; }
+.pricing-container-set { margin-top: 24px; }
